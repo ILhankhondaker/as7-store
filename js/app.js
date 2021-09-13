@@ -48,7 +48,9 @@ const addToCart = (id, price) => {
 
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
-  const converted = parseInt(element);
+  // const converted = parseInt(element);
+  //===== Error solve =====
+  const converted = parseFloat(element);
   return converted;
 };
 
@@ -101,6 +103,7 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
+
 
 
 // called updateTotal function==
