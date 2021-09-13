@@ -62,7 +62,9 @@ const updatePrice = (id, value) => {
   // document.getElementById(id).innerText = Math.round(total);
   //===== Error solve price ======
   document.getElementById(id).innerText = total.toFixed(2);
-
+  // called updateTotal function
+  updateTotal();
+  // console.log('Total is:', total)
 };
 
 // set innerText function
@@ -70,7 +72,9 @@ const setInnerText = (id, value) => {
   // document.getElementById(id).innerText = Math.round(value);
   // Error Solve Total-Tax ======
   document.getElementById(id).innerText = value.toFixed(2);
-  // console.log(value)
+  // called updateTotal function==
+  updateTotal();
+  // console.log(totalTax)
 };
 
 // update delivery charge and total Tax
@@ -90,23 +94,17 @@ const updateTaxAndCharge = () => {
   }
 };
 
-/* //grandTotal update function
+//grandTotal update function
 const updateTotal = () => {
   const grandTotal =
     getInputValue("price") + getInputValue("delivery-charge") +
     getInputValue("total-tax");
-  document.getElementById("total").innerText = grandTotal;
-}; */
-
-
-//grandTotal update function
-const updateTotal = () => {
-  const grandTotal = + getInputValue("delivery-charge");
-  document.getElementById("total").innerText = grandTotal;
+  document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
+
+
+// called updateTotal function==
 updateTotal();
-
-
 
 
 loadProducts();
